@@ -1,0 +1,1 @@
+<img src="https://upload.wikimedia.org/math/7/b/e/7be0306dab21c82f7a1e81a4ecfdb49e.png"></img> resume. Forked from the original [<img src="https://upload.wikimedia.org/math/7/b/e/7be0306dab21c82f7a1e81a4ecfdb49e.png"></img> template by Matthew Boedicker and David J. Grant](http://www.davidgrant.ca/latex_resume_template)
