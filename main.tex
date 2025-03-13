@@ -4,102 +4,110 @@
 % (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca (fork 1)
 % (c) 2016 Ananda Seelan <ananda.seelan@gmail.com> (fork 2)
 % (c) 2024 Ariharasudhan <aravindariharan@gmail.com> https://arihara-sudhan.github.io (fork 3)
-% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+% Licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
 
 \documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 %-----------------------------------------------------------
-%Margin setup
-
+% Margin setup
 \setlength{\voffset}{0.1in}
 \setlength{\paperwidth}{8.5in}
 \setlength{\paperheight}{11in}
 \setlength{\headheight}{0in}
 \setlength{\headsep}{0in}
-\setlength{\textheight}{11in}
-\setlength{\textheight}{9.5in}
+\setlength{\textheight}{9.5in} % Removed redundant definition
 \setlength{\topmargin}{-0.25in}
 \setlength{\textwidth}{7in}
 \setlength{\topskip}{0in}
 \setlength{\oddsidemargin}{-0.25in}
 \setlength{\evensidemargin}{-0.25in}
 
+% Packages
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{lmodern}
-%-----------------------------------------------------------
-%\usepackage{fullpage}
-%\textheight=9.0in
+\usepackage{url} % Added for better URL formatting
+
 \pagestyle{empty}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
 %-----------------------------------------------------------
-%Custom commands
+% Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
 \newcommand{\resheading}[1]{\textbf{\sffamily{\mbox{~}{\large #1} \vphantom{p\^{E}}}}}
-%{{\large \textbf{#1 \vphantom{p\^{E}}}}}
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{-6pt}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-4pt}} % Reduced spacing from -6pt to -4pt for better alignment
+
 \newcommand\blfootnote[1]{%
   \begingroup
   \renewcommand\thefootnote{}\footnote{#1}%
   \addtocounter{footnote}{-1}%
   \endgroup
 }
+
 %-----------------------------------------------------------
+% Fancy footer settings
 \pagestyle{fancy}
-\fancyhead{} % clear all header fields
-\renewcommand{\headrulewidth}{0pt} % no line in header area
-\fancyfoot{} % clear all footer fields
-\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
-\fancyfoot[RE,LO]{\fontsize{7}{4}\selectfont Ariharasudhan - Resume}
+\fancyhead{} % Clear all header fields
+\renewcommand{\headrulewidth}{0pt} % No line in header area
+\fancyfoot{} % Clear all footer fields
+\fancyfoot[LE,RO]{\thepage} % Page number in "outer" position of footer
+\fancyfoot[RE,LO]{\fontsize{9}{6}\selectfont Ariharasudhan - Resume} % Increased footer text size
+
+%-----------------------------------------------------------
 \begin{document}
 
+% Contact Information
 \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{\Large Ariharasudhan}  & 91 6382509390\\
-https://arihara-sudhan.github.io &  aravindariharan@gmail.com \\
+\textbf{\Large Ariharasudhan}  & +91 6382509390\\
+\url{https://arihara-sudhan.github.io} &  aravindariharan@gmail.com \\ % Used \url{} for better line-breaking
 \end{tabular*}
 \\
 \vspace{0.05in}
 \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
 \vspace{0.025in}
 
+%-----------------------------------------------------------
+% Education
 \resheading{Education}
 \begin{itemize}
 \item[]
-	\ressubheading{Einstein College of Engineering}{Tirunelveli, India}{Bachelor of Engineering, Computer Science and Engineering (CGPA: 8.83)}{2019 - 2023}
+    \ressubheading{Einstein College of Engineering}{Tirunelveli, India}{B.E., Computer Science and Engineering (CGPA: 8.83)}{2019 - 2023}
 
 \item[]
-	\ressubheading{Government Hr. Sec. School}{Tenkasi, India}{Tamil Nadu Higher Secondary School Examination (Score: 87\%)}{2019}
-
+    \ressubheading{Government Hr. Sec. School}{Tenkasi, India}{Higher Secondary School Examination (Score: 87\%)}{2019}
 \end{itemize}
 
+%-----------------------------------------------------------
+% Programming Skills
 \resheading{Programming Skills}
 \vspace{-2mm}
 \begin{itemize}
 \item[]{\textit{Deep Learning Frameworks:} PyTorch, NumPy}\vspace{-2mm}
 \item[]{\textit{Languages:} Python, Java, JavaScript, C}\vspace{-2mm}
 \item[]{\textit{Databases:} MySQL, MongoDB}\vspace{-2mm}
-\item[]{\textit{Web Development Frameworks:} FastAPI, ReactJS, NodeJS, Express JS}\vspace{-2mm}
-\item[]{\textit{Operating Systems:} Windows, MacOS, Linux (mainly Ubuntu)}\vspace{-2mm}
+\item[]{\textit{Web Development Frameworks:} FastAPI, ReactJS, NodeJS, Express.js}\vspace{-2mm}
+\item[]{\textit{Operating Systems:} Windows, macOS, Linux (mainly Ubuntu)}\vspace{-2mm}
 \item[]{\textit{Version Control Systems:} Git}\vspace{-2mm}
 \end{itemize}
 
-\vspace{0.05in}
+%-----------------------------------------------------------
+% Work Experience
 \resheading{Work Experience}
 \begin{itemize}
 \item[]
-	\ressubheading{Zoho Corporation}{Tenkasi, India}{Member Technical Staff, Zoho Desk}{April 2024 - Now}
-	\begin{itemize}
-		\resitem{Working on The UI & AI Currently}
-		\resitem{\textit{I am currently developing a Retrieval-Augmented Generation (RAG) system leveraging the Zoho Desk Knowledge Base as a source of information. The system integrates FAISS (Facebook AI Similarity Search) for efficient indexing and retrieval of knowledge base documents. Additionally, it employs a HuggingFace large language model (LLM) to enhance the generation of contextually accurate and insightful responses. I also write production-level JavaScript and ReactJS code to implement new features.}}
-	\end{itemize}
-
+    \ressubheading{Zoho Corporation}{Tenkasi, India}{Member Technical Staff, Zoho Desk}{April 2024 - Present}
+    \begin{itemize}
+        \resitem{Developing UI and AI systems for Zoho Desk.}
+        \resitem{\textit{Currently working on a Retrieval-Augmented Generation (RAG) system using FAISS for document retrieval and a HuggingFace LLM for improved responses. Also developing production-grade JavaScript and ReactJS features.}}
+    \end{itemize}
 \item[]
 	\ressubheading{Zoho Corporation}{Trichy, India}{Member Technical Staff, ZLabs Speech Profiling}{Jan 2024 - April 2024}
 	\begin{itemize}
@@ -123,56 +131,139 @@ https://arihara-sudhan.github.io &  aravindariharan@gmail.com \\
 
 \end{itemize}
 
+%-----------------------------------------------------------
+% Projects
 \resheading{Projects}
 \begin{itemize}
+
 \item[]
 	\textbf{AI Powered MediKit}
 	\vspace{-3mm}
 	\begin{itemize}
-		\resitem{The AI-Powered MediKit enhances medical analysis with advanced features, utilizing Vision Transformers (ViTs) for improved classification over conventional CNNs. ViTs excel in capturing subtle details in medical images that CNNs struggle with. It also offers Heartbeat Analysis using MFCC for identifying abnormalities. The MediKit supports few-shot classification for tablets, reducing the need for retraining with new data. Additionally, it includes a feature for users to inquire about herbal remedies.}
+		\resitem{Revolutionizes healthcare diagnostics by leveraging Vision Transformers (ViTs) for precise medical image analysis.}
+		\resitem{Overcomes CNN limitations by capturing fine-grained medical features with superior accuracy.}
+		\resitem{Features Heartbeat Analysis using Mel-Frequency Cepstral Coefficients (MFCC) to classify heartbeats and detect abnormalities.}
+		\resitem{Supports few-shot classification for tablet identification, minimizing retraining needs and improving adaptability.}
+		\resitem{Includes a Herbal Solution feature that bridges modern AI with traditional medicine by suggesting natural remedies.}
+		\resitem{Combines precision, innovation, and accessibility to set a new benchmark in AI-driven medical solutions.}
+	\end{itemize}
+
+\item[]
+	\textbf{MindKural - RAG System}
+	\vspace{-3mm}
+	\begin{itemize}
+		\resitem{Developed a conversational AI bot using LangChain to answer queries based on Thirukkural, the timeless Tamil literary masterpiece.}
+		\resitem{Utilized FAISS for vector embeddings and similarity search to enable efficient retrieval.}
+		\resitem{Enhanced responses using Retrieval-Augmented Generation (RAG) with Falcon LLM.}
+		\resitem{Transformed Thirukkural’s wisdom into a knowledge framework that informs and heals.}
 	\end{itemize}
 
 \item[]
 	\textbf{Grouped Detection of Objects}
 	\vspace{-3mm}
 	\begin{itemize}
-		\resitem{The Grouped Detection of Objects utilizes the YOLO algorithm to perform accurate object detection in images. After detecting the objects, I crop specific regions of interest and feed them into a Swin Transformer-backboned few-shot network, which helps in performing efficient few-shot classification. To determine the optimal number of clusters, I incorporate the Elbow Method along with K-means clustering, ensuring the model is well-tuned. For seamless deployment, I use FastAPI to create a robust microservice that handles real-time predictions and can be easily scaled for various use cases.}
+		\resitem{Utilized the YOLO algorithm to detect objects in images accurately.}
+		\resitem{Cropped regions of interest and applied a Swin Transformer-based few-shot network for classification.}
+		\resitem{Implemented K-means clustering with the Elbow Method to optimize object grouping.}
+		\resitem{Deployed a scalable real-time prediction microservice using FastAPI.}
 	\end{itemize}
 
 \item[]
 	\textbf{Fewshot Classify Anything Model}
 	\vspace{-3mm}
 	\begin{itemize}
-	    \resitem{The "Classify Anything" model performs similarity searches on stored embeddings of Images. We use a Swin Transformer as the backbone and train the embeddings using triplet loss. With a few extracted embeddings saved in an index, the model classifies all inputs effectively.}
+	    \resitem{Performs similarity searches on stored embeddings of images.}
+	    \resitem{Uses a Swin Transformer as the backbone and employs triplet loss for training embeddings.}
+	    \resitem{Efficiently classifies new inputs by referencing a few saved embeddings in an index.}
 	\end{itemize}
 
 \item[]
-	\textbf{Thirukkural - AI Similarity Search}
+	\textbf{Next-Word Prediction using Bigram Model}
 	\vspace{-3mm}
 	\begin{itemize}
-		\resitem{The Thirukkural AI Similarity Search utilizes paraphrase transformer embeddings to perform searches based on queries entered by users. It is served using FastAPI, with the frontend currently implemented in ReactJS.}
+	    \resitem{Implemented a probabilistic language model that predicts the next word based on the previous word using a bigram approach.}
+	    \resitem{Utilized joint probability and conditional probability to compute word sequences.}
+	    \resitem{Demonstrated real-world text generation applications by starting with seed words and generating coherent sentences.}
+	\end{itemize}
+
+\item[]
+	\textbf{Dialect Classification using Naïve Bayes}
+	\vspace{-3mm}
+	\begin{itemize}
+	    \resitem{Built a text classification model for dialect detection using the Naive Bayes algorithm.}
+	    \resitem{Employed the Bag of Words approach to store word frequencies for classification.}
+	    \resitem{Used Laplace Smoothing to handle zero probabilities and prevent model breakdown.}
+	    \resitem{Optimized for efficiency by working in log-space to prevent underflow when multiplying small probabilities.}
 	\end{itemize}
 
 \end{itemize}
 
+%-----------------------------------------------------------
+% Achievements & Activities
+\newpage
 \resheading{Achievements/Activities}
-\vspace{-3mm}
 \begin{itemize}
-    \item Assisting a startup called Yash in automating 3D texture application using Python and training simple ML models
-    \vspace{-3mm}
-    \item Taught MERN stack development to a group of expert students from my college, and ML to a group of expert students from colleges in Coimbatore, Tirunelveli, and Madurai
-    \vspace{-3mm}
-    \item Qualified for the final round of Medecro.ai's Hackathon - Built an AI-powered MediKit
-    \vspace{-3mm}
-    \item Qualified for the final round of the Atheneum Hackathon, conducted by IGDTUW, New Delhi - Built a Smart Education System
-    \vspace{-3mm}
-    \item Secured I positions in Hackathons, Code Debugging, Web Development, and other competitions conducted by colleges in the south, such as Rohini College of Engineering, Thamirabarani Engineering College, and PSN College of Engineering
-    \vspace{-3mm}
-    \item Awarded Best Project Presentation in the Project Expo at Einstein College of Engineering for the Smart Attendance System
-    \vspace{-3mm}
-    \item Secured first position for showcasing skills in Mathematics in the Talent Search Examination conducted by JP College of Engineering, Tenkasi
-    \vspace{-3mm}
-    \item Secured the Yuva Shri Kala Bharathi Award from Bharathi Yuva Kendra, Madurai - For outstanding performance in education and the arts
+    \item Educating Peers at Zoho Desk on Client Technology  
+          \textit{I mentor my team on JavaScript internals, the functional programming paradigm, ReactJS, and TypeScript.} (SEP 2024)
+    \vspace{-2mm}
+    
+    \item Learning NLP and Speech Processing nightly at a study group meet (DAILY)
+    \vspace{-2mm}
+
+    \item Taught Basic Machine Learning to Students  
+          \textit{Guided expert students from Coimbatore, Tirunelveli, and Madurai on Multi-Layer Perceptron and CNN via Google Meet.} (OCT 2024)
+    \vspace{-2mm}
+
+    \item Taught MERN Stack Development to Students  
+          \textit{Conducted weekend sessions at Einstein College of Engineering on MERN Stack Development.} (DEC 2024)
+    \vspace{-2mm}
+
+    \item Session on "Meet AI" at Kamaraj College of Engineering and Technology, Virudhunagar  
+          \textit{Taught AI fundamentals, fostering curiosity and learning to inspire an AI-powered South.} (JAN 2025)
+    \vspace{-2mm}
+
+    \item Session on "On Technology and Rural Development" at AKY Polytechnic College, Nellai  
+          \textit{Discussed technology’s role in rural development, education, societal changes, and self-improvement.} (SEP 2024)
+    \vspace{-2mm}
+
+    \item Qualified for the final round of Medecro.ai's Hackathon  
+          \textit{Developed AI-powered MediKit, a bundle of AI solutions for medical problems such as heartbeat analysis, tumor detection, and cell classification.} (AUG 2024)
+    \vspace{-2mm}
+
+    \item Qualified for the final round of the Atheneum Hackathon, IGDTUW, New Delhi  
+          \textit{Proposed Smart Education System with OCR-based test evaluation, virtual pen, virtual quiz, and face recognition-based attendance.} (AUG 2022)
+    \vspace{-2mm}
+
+    \item Talent Search Examination, JP College of Engineering, Tenkasi  
+          \textit{Secured 1st Prize for excellence in Mathematics and Science.} (FEB 2017)
+    \vspace{-2mm}
+
+    \item Yuva Shri Kala Bharathi Award, Bharathi Yuva Kenthra, Madurai  
+          \textit{Recognized for outstanding performance in proficiency and arts.} (JAN 2018)
+    \vspace{-2mm}
+
+    \item Thirukkural Literature Explanations  
+          \textit{Dedicating my evenings to writing detailed explanations for each Thirukkural.} (OCT 2024)
+    \vspace{-2mm}
+
+    \item Aladi Aruna Merit Scholarship, Einstein College of Engineering, Tirunelveli  
+          \textit{Awarded a scholarship for securing a top rank in academics.} (FEB 2017)
+    \vspace{-2mm}
+
+    \item 1st Prizes in Paper Presentation, Web Designing, Code Debugging  
+          \textit{Rohini College of Engineering, Kanyakumari - National Level Technical Symposium.} (MAR 2022)
+    \vspace{-2mm}
+
+    \item 1st Prizes in Paper Presentation and Web Designing Competitions  
+          \textit{PSN College of Engineering, Tirunelveli - National Level Technical Symposium.} (APR 2022)
+    \vspace{-2mm}
+
+    \item 1st Prizes in Paper Presentation, Web Designing, and Technical Quiz  
+          \textit{Thamirabarani Engineering College, Tirunelveli - National Level Technical Symposium.} (MAY 2022)
+    \vspace{-2mm}
+
+    \item Best Project Presentation in Mini Project Expo for III-year students  
+          \textit{Developed an AI-Based Student Service System at Einstein College of Engineering.}
 \end{itemize}
 \vspace{2cm}
 \end{document}
